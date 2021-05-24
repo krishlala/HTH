@@ -1,12 +1,11 @@
 function sendEmail() {
       Email.send({
-        Host: "krishlala2009@gmail.com",
-        Username: "sender@email_address.com",
-        Password: "Enter your password",
+        Host: "smtp.gmail.com",
+        Username: document.getElementById(name).value,
         To: 'krishlala2009@gmail.com',
-        From: "sender@email_address.com",
-        Subject: "Sending Email using javascript",
-        Body: "Well that was easy!!",
+        From: document.getElementById(email).value",
+        Subject: document.getElementById(subject).value,
+        Body: document.getElementById(comment).value,
       })
         .then(function (message) {
           alert("mail sent successfully")
