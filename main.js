@@ -11,14 +11,6 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-name = document.getElementById(name).value;
-localStorage.setItem("name", name);
-email = document.getElementById(email).value;
-localStorage.setItem("email", email);
-subject = document.getElementById(subject).value;
-localStorage.setItem("subject", subject);
-comment = document.getElementById(comment).value;
-localStorage.setItem("comment", comment);
 function sendEmail() {
       Email.send({
         Host: "smtp.gmail.com",
@@ -27,7 +19,16 @@ function sendEmail() {
         From: document.getElementById(email).value;,
         Subject: document.getElementById(subject).value;,
         Body: document.getElementById(comment).value;,
+            
       })
+      name = document.getElementById(name).value;
+localStorage.setItem("name", name);
+email = document.getElementById(email).value;
+localStorage.setItem("email", email);
+subject = document.getElementById(subject).value;
+localStorage.setItem("subject", subject);
+comment = document.getElementById(comment).value;
+localStorage.setItem("comment", comment);
         .then(function (message) {
           alert("mail sent successfully")
         });
