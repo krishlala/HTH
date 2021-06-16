@@ -10,26 +10,3 @@ var firebaseConfig = {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-
-function sendEmail() {
-      Email.send({
-        Host: "smtp.gmail.com",
-        Username: document.getElementById(name).value;,
-        To: 'krishlala2009@gmail.com',
-        From: document.getElementById(email).value;,
-        Subject: document.getElementById(subject).value;,
-        Body: document.getElementById(comment).value;,
-            
-      })
-      name = document.getElementById(name).value;
-localStorage.setItem("name", name);
-email = document.getElementById(email).value;
-localStorage.setItem("email", email);
-subject = document.getElementById(subject).value;
-localStorage.setItem("subject", subject);
-comment = document.getElementById(comment).value;
-localStorage.setItem("comment", comment);
-        .then(function (message) {
-          alert("mail sent successfully")
-        });
-    }
